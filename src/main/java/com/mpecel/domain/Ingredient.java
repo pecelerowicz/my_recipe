@@ -9,10 +9,11 @@ public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String description;
     private BigDecimal amount;
-//    private UnitOfMeasure uom;  // tbd
+
+    @OneToOne(fetch = FetchType.EAGER) // for OneToOne it's eager anyway, but let's keep it explicit
+    private UnitOfMeasure uom;
 
     @ManyToOne // no cascade, if we delete an ingredient we don't want it to delete the Recipe
     private Recipe recipe;
@@ -39,6 +40,14 @@ public class Ingredient {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public UnitOfMeasure getUom() {
+        return uom;
+    }
+
+    public void setUom(UnitOfMeasure uom) {
+        this.uom = uom;
     }
 
     public Recipe getRecipe() {
