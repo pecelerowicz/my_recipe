@@ -101,18 +101,17 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacNotes.setRecipeNotes("Guacamole notes tbd...");
 
         // needed for bi-directional (should be one method call)
-        guacNotes.setRecipe(guacRecipe);
         guacRecipe.setNotes(guacNotes);
 
         // helper method needed
-        guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), teaSpoonUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("kosher salt", new BigDecimal(5), teaSpoonUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("fresh lime juice or lemon juice", new BigDecimal(2), tableSpoonUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("minced red onion", new BigDecimal(2), tableSpoonUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("serrano chiles", new BigDecimal(2), tableSpoonUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("cilantro", new BigDecimal(2), tableSpoonUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("black pepper", new BigDecimal(2), pinchUom, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("ripe tomato", new BigDecimal(".5"), cupUom, guacRecipe));
+        guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), teaSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("kosher salt", new BigDecimal(5), teaSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("fresh lime juice or lemon juice", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("minced red onion", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("serrano chiles", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("cilantro", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("black pepper", new BigDecimal(2), pinchUom));
+        guacRecipe.addIngredient(new Ingredient("ripe tomato", new BigDecimal(".5"), cupUom));
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
@@ -126,16 +125,17 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacoRecipe.setDirections("Taco Directions tbd...");
         Notes tacoNotes = new Notes();
         tacoNotes.setRecipeNotes("Taco notes tbd...");
-        tacoNotes.setRecipe(tacoRecipe);
+
         tacoRecipe.setNotes(tacoNotes);
-        tacoRecipe.getIngredients().add(new Ingredient("aaa", new BigDecimal(1), teaSpoonUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("bbb", new BigDecimal(2), teaSpoonUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("ccc", new BigDecimal(3), tableSpoonUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("ddd", new BigDecimal(4), tableSpoonUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("eee", new BigDecimal(5), tableSpoonUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("fff", new BigDecimal(6), tableSpoonUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("ggg", new BigDecimal(7), pinchUom, tacoRecipe));
-        tacoRecipe.getIngredients().add(new Ingredient("hhh", new BigDecimal(".8"), cupUom, tacoRecipe));
+
+        tacoRecipe.addIngredient(new Ingredient("aaa", new BigDecimal(1), teaSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("bbb", new BigDecimal(2), teaSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("ccc", new BigDecimal(3), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("ddd", new BigDecimal(4), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("eee", new BigDecimal(5), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("fff", new BigDecimal(6), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("ggg", new BigDecimal(7), pinchUom));
+        tacoRecipe.addIngredient(new Ingredient("hhh", new BigDecimal(".8"), cupUom));
 
         tacoRecipe.getCategories().add(americanCategory);
         tacoRecipe.getCategories().add(mexicanCategory);
