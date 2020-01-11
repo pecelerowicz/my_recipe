@@ -99,8 +99,12 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setDirections("Guacamole Directions tbd...");
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("Guacamole notes tbd...");
+
+        // needed for bi-directional (should be one method call)
         guacNotes.setRecipe(guacRecipe);
         guacRecipe.setNotes(guacNotes);
+
+        // helper method needed
         guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), teaSpoonUom, guacRecipe));
         guacRecipe.getIngredients().add(new Ingredient("kosher salt", new BigDecimal(5), teaSpoonUom, guacRecipe));
         guacRecipe.getIngredients().add(new Ingredient("fresh lime juice or lemon juice", new BigDecimal(2), tableSpoonUom, guacRecipe));
