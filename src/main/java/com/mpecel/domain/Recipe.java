@@ -1,5 +1,6 @@
 package com.mpecel.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
